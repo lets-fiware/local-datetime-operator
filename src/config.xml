@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="FISUDA" name="local-datetime" version="0.1.0">
+
+    <details>
+        <title>Local datatime</title>
+        <homepage>https://github.com/lets-fiware/local-datetime-operator</homepage>
+        <authors>Kazuhito Suda &lt;kazuhito@fisuda.jp&gt;</authors>
+        <email>kazuhito@fisuda.jp</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>Local datatime operator</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>MIT</license>
+        <issuetracker>https://github.com/lets-fiware/local-datetime-operator/issues</issuetracker>
+    </details>
+
+    <requirements>
+        <!-- Add any extra requirements here -->
+        <!-- <feature name="${feature-name}" /> -->
+    </requirements>
+
+    <preferences>
+        <preference name="format" label="format" description="moment.js format" type="list" default="llll">
+          <option label="Time (LT)" value="LT"/>
+          <option label="Time with seconds (LTS)" value="LTS"/>
+          <option label="Month numeral, day of month, year (L)" value="L"/>
+          <option label="Month numeral, day of month, year (l)" value="l"/>
+          <option label="Month name, day of month, year	(LL)" value="LL"/>
+          <option label="Month name, day of month, year	(ll)" value="ll"/>
+          <option label="Month name, day of month, year, time (LLL)" value="LLL"/>
+          <option label="Month name, day of month, year, time (lll)" value="lll"/>
+          <option label="Month name, day of month, day of week, year, time (LLLL)" value="LLLL"/>
+          <option label="Month name, day of month, day of week, year, time (llll)" value="llll"/>
+          <option label="Custom" value="custom"/>
+        </preference>
+        <preference name="custom" type="text" label="custom" description="custom" default="YYYY-MM-DD"/>
+        <preference name="send_nulls" type="boolean" label="Send Nulls" description="Enable this option to propagate null values, leave it disable to filter null events" default="true" />
+
+    </preferences>
+
+    <wiring>
+        <inputendpoint name="input" type="text" label="input" description="ISO8601 format"/>
+        <outputendpoint name="output" type="text" label="output" description="output"/>
+    </wiring>
+
+    <scripts>
+        <script src="lib/js/moment-with-locales.min.js"/>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>
