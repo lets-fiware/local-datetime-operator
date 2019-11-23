@@ -1,15 +1,11 @@
 {
   "name": "local-datetime-operator",
   "dependencies": {
-    "moment": "2.17.1",
-    "moment-timezone": "^0.5.27"
+    "moment": "2.17.1"
   },
   "exportsOverride": {
     "moment": {
       "js": "min/moment-with-locales.min.js"
-    },
-    "moment-timezone": {
-      "js": "builds/moment-timezone.min.js"
     }
   }
 }

@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-/* globals MockMP, moment */
+/* globals MashupPlatform, MockMP, beforeAll, afterAll, beforeEach */
 
 (function () {
 
@@ -18,6 +18,7 @@
             window.MashupPlatform = new MockMP({
                 type: 'operator',
                 prefs: {
+                    "lang": "",
                     "format": "llll",
                     "custom": "YYYY-MM-DD",
                     "send_nulls": true

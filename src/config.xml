@@ -22,9 +22,8 @@
     </requirements>
 
     <preferences>
-        <preference name="tz" type="text" label="Time zone" description="Time zone" default="Asia/Tokyo"/>
-        <preference name="lang" type="text" label="lang" description="lang en, ja, es, etc." default=""/>
-        <preference name="format" label="format" description="moment.js format" type="list" default="llll">
+        <preference name="lang" type="text" label="lang" description="en, ja, es, etc." default=""/>
+        <preference name="format" type="list" label="format" description="moment.js format" default="llll">
           <option label="Time (LT)" value="LT"/>
           <option label="Time with seconds (LTS)" value="LTS"/>
           <option label="Month numeral, day of month, year (L)" value="L"/>
@@ -47,7 +46,6 @@
     </wiring>
 
     <scripts>
-        <script src="moment-timezone.min.js"/>
         <script src="lib/js/moment-with-locales.min.js"/>
         <script src="js/main.js"/>
     </scripts>

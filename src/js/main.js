@@ -30,11 +30,6 @@
         if (value != null) {
             // https://momentjs.com/
 
-            var timeZone = MashupPlatform.prefs.get('tz');
-            if (timeZone != "") {
-                moment.tz.setDefault(timeZone);
-            }
-
             var lang = MashupPlatform.prefs.get('lang');
             if (lang != "") {
                 moment.lang(lang);
