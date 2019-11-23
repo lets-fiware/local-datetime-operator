@@ -14,7 +14,7 @@
 
     var pushEvent = function pushEvent(data) {
         if (MashupPlatform.operator.outputs.output.connected) {
-            MashupPlatform.wiring.pushEvent("output", data);
+            MashupPlatform.wiring.pushEvent('output', data);
         }
     }
 
@@ -27,14 +27,26 @@
     };
 
     var localDateTime = function localDateTime(value) {
-        var format = getFormat();
-
         if (value != null) {
-            // https://momentjs.com/docs/
-            value = moment(value, null, MashupPlatform.context.get('language')).format(format);
+            // https://momentjs.com/
+
+            var timeZone = MashupPlatform.prefs.get('tz');
+            if (timeZone != "") {
+                moment.tz.setDefault(timeZone);
+            }
+
+            var lang = MashupPlatform.prefs.get('lang');
+            if (lang != "") {
+                moment.lang(lang);
+            } else {
+                moment.locale(MashupPlatform.context.get('language'));
+            }
+
+            value = moment(value).format(getFormat());
             pushEvent(value);
+
         } else {
-            if (MashupPlatform.prefs.get("send_nulls")) {
+            if (MashupPlatform.prefs.get('send_nulls')) {
                 pushEvent(value);
             }
         }
@@ -44,7 +56,7 @@
      * this if is required for testing, but we have to search a cleaner way
      */
     if (window.MashupPlatform != null) {
-        MashupPlatform.wiring.registerCallback("input", localDateTime);
+        MashupPlatform.wiring.registerCallback('input', localDateTime);
     }
 
     /* test-code */

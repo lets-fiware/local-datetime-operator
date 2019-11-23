@@ -22,6 +22,8 @@
     </requirements>
 
     <preferences>
+        <preference name="tz" type="text" label="Time zone" description="Time zone" default="Asia/Tokyo"/>
+        <preference name="lang" type="text" label="lang" description="lang en, ja, es, etc." default=""/>
         <preference name="format" label="format" description="moment.js format" type="list" default="llll">
           <option label="Time (LT)" value="LT"/>
           <option label="Time with seconds (LTS)" value="LTS"/>
@@ -37,7 +39,6 @@
         </preference>
         <preference name="custom" type="text" label="custom" description="custom" default="YYYY-MM-DD"/>
         <preference name="send_nulls" type="boolean" label="Send Nulls" description="Enable this option to propagate null values, leave it disable to filter null events" default="true" />
-
     </preferences>
 
     <wiring>
@@ -46,6 +47,7 @@
     </wiring>
 
     <scripts>
+        <script src="moment-timezone.min.js"/>
         <script src="lib/js/moment-with-locales.min.js"/>
         <script src="js/main.js"/>
     </scripts>
