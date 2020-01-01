@@ -128,8 +128,6 @@ module.exports = function (grunt) {
                     }
                 },
                 files: [
-                    'bower_components/moment/min/moment-with-locales.min.js',
-                    'bower_components/moment-timezone/builds/moment-timezone.min.js',
                     'node_modules/mock-applicationmashup/dist/MockMP.js',
                     'src/js/*.js',
                     'tests/js/*Spec.js'

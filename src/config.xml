@@ -22,7 +22,7 @@
     </requirements>
 
     <preferences>
-        <preference name="lang" type="text" label="lang" description="en, ja, es, etc." default=""/>
+        <preference name="locale" type="text" label="locale" description="en, ja, es, etc." default=""/>
         <preference name="format" type="list" label="format" description="moment.js format" default="llll">
           <option label="Time (LT)" value="LT"/>
           <option label="Time with seconds (LTS)" value="LTS"/>
