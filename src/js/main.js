@@ -30,11 +30,11 @@
         if (value != null) {
             // https://momentjs.com/
 
-            var lang = MashupPlatform.prefs.get('lang');
-            if (lang != "") {
-                moment.lang(lang);
+            var locale = MashupPlatform.prefs.get('locale');
+            if (locale != "") {
+                moment().locale(locale);
             } else {
-                moment.locale(MashupPlatform.context.get('language'));
+                moment().locale(MashupPlatform.context.get('language'));
             }
 
             value = moment(value).format(getFormat());
