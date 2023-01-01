@@ -2,7 +2,7 @@
  * local-datetime
  * https://github.com/lets-fiware/local-datetime-operator
  *
- * Copyright (c) 2019 Kazuhito Suda
+ * Copyright (c) 2019-2023 Kazuhito Suda
  * Licensed under the MIT license.
  */
 
